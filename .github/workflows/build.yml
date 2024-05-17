@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v4.1.6
         with:
           fetch-depth: 0
 
@@ -68,7 +68,7 @@ jobs:
     runs-on: ${{ matrix.os }}
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v4.1.6
 
       - name: Run action
         uses: ./
