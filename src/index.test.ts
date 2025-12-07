@@ -55,7 +55,7 @@ describe.each(platforms)('platform is %p', (platform) => {
     expect(mockedTc.downloadTool).toHaveBeenCalledWith(
       expect.stringMatching(
         new RegExp(
-          `https://broth.itch.ovh/butler/[a-zA-Z0-9-]+/${version}/archive/default`,
+          `https://broth.itch.zone/butler/[a-zA-Z0-9-]+/${version}/archive/default`,
         ),
       ),
     );
@@ -69,7 +69,7 @@ describe.each(platforms)('platform is %p', (platform) => {
 
     expect(mockedTc.cacheFile).toHaveBeenCalledWith(
       expect.stringContaining(`${path.cli}/${name}`),
-      name,
+      platform === 'win32' ? `${name}.exe` : name,
       name,
       version,
     );
